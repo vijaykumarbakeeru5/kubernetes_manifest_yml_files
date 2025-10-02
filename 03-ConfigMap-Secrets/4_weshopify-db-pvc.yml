@@ -6,7 +6,8 @@ spec:
   volumeName: weshopify-db-pv      
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-storage
+  #storageClassName: local-storage
+  storageClassName: standard
   resources:
     requests:
       storage: 4Gi
