@@ -64,7 +64,7 @@ spec:
         - name: customer-storage
           mountPath: /app/data
 
-      volumes:
+      volumes:  # <-- this should be aligned with containers:
       - name: customer-storage
         persistentVolumeClaim:
           claimName: customer-pv-claim
