@@ -1,7 +1,8 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: customer-config-map
+  name: db-config
   namespace: default
 data:
-  db-username : "admin"
+  db-endpoint : "database-1.c3k2so8k0qoe.ap-south-1.rds.amazonaws.com"
+  db-name: "batch24"
