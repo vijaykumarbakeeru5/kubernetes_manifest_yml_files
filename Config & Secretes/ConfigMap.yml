@@ -4,5 +4,5 @@ metadata:
   name: db-config
   namespace: default
 data:
-  db-endpoint : "database-1.c3k2so8k0qoe.ap-south-1.rds.amazonaws.com"
+  db-endpoint : "database-1.cboe6yoe2c8k.us-east-2.rds.amazonaws.com"
   db-name: "batch24"
