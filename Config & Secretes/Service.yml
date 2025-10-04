@@ -13,3 +13,4 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 8080
+#http://a0f6a6a2a0cce4c6492ea2ea16c07f70-1019895947.us-east-2.elb.amazonaws.com/customer/ping
