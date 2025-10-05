@@ -67,7 +67,7 @@ spec:
       volumes:  # <-- this should be aligned with containers:
       - name: customer-storage
         persistentVolumeClaim:
-          claimName: customer-pv-claim
+          claimName: customer-pv-claim  # should match with the persistentclaim name
 
 
 # kubectl exec -it customer-pod -c customer -- /bin/sh
