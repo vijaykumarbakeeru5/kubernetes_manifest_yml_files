@@ -68,3 +68,7 @@ spec:
       - name: customer-storage
         persistentVolumeClaim:
           claimName: customer-pv-claim
+
+
+# kubectl exec -it customer-pod -c customer -- /bin/sh
+
