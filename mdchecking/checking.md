@@ -1,4 +1,4 @@
-<pre>sudo yum update -y
-sudo yum install docker -y
-sudo systemctl start docker
-</pre>
+<h4><small>Update system packages</small></h4>
+
+```bash
+sudo yum update -y
