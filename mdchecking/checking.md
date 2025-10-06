@@ -1,8 +1,8 @@
-```
+# Update system packages
 sudo yum update -y
-<pre>
-sudo yum update -y
-</pre>
-sudo
-```
-sudo yum install
+
+# Install Docker
+sudo yum install docker -y
+
+# Start Docker service
+sudo systemctl start docker
