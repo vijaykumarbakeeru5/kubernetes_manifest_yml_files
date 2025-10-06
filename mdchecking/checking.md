@@ -1,11 +1,8 @@
+# 🚀 Docker Installation Guide for Amazon Linux
 
-## INSTALL DOCKER ON AMAZON LINUX
-
+## Step 1: Update all packages
 ```bash
 sudo yum update -y
-
-```bash
-sudo yum install -y docker
 
 
 
