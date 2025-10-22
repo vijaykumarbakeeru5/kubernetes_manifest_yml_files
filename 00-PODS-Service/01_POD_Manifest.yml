@@ -12,6 +12,7 @@ spec:
     image: 851271747310.dkr.ecr.us-east-2.amazonaws.com/customer:1
     ports:
     - containerPort: 8080
+  # - containerPOrt: 5000
   - name: webapp
     image: nginx
     ports:
