@@ -1,3 +1,28 @@
+# ##############################################cluster##################################---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  labels:
+    app: packersmovers
+spec:
+  type: ClusterIP
+  selector:
+    app: packersmovers
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+    # targetPort: 5000
+```
+
+
+
+
+
+
+
 ---
 apiVersion: v1
 kind: Service
