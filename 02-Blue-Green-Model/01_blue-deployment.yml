@@ -2,28 +2,58 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: javawebappbluedeployment
+  name: customer
+# name: frontend
+  labels:
+    app: packersmovers
 spec:
-  replicas: 2
   strategy:
     type: RollingUpdate
+    # type: Rec
+    rollingUpdate:
+      maxUnavailable: 1          # Maximum number of Pods that can be unavailable during the update
+      maxSurge: 1                # Maximum number of Pods that can be created above the desired replica count
+  revisionHistoryLimit: 10
+  replicas: 3
   selector:
     matchLabels:
-      app: java-web-app
-      version: v1
-      color: blue
+      app: packersmovers
   template:
     metadata:
-      name: javawebapppod
       labels:
-        app: java-web-app
-        version: v1
-        color: blue
+        app: packersmovers
     spec:
       containers:
-      - name: javawebappcontainer
-        image: ashokit/javawebapp
+      - name: customer
+    # - name: frontend
+        image: 841162679093.dkr.ecr.us-east-1.amazonaws.com/customer:6
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+      # - containerPort: 5000
+        readinessProbe:
+          httpGet:
+            path: /customer/ping          # Endpoint to check for readiness (adjust according to your app)
+            port: 8080
+          initialDelaySeconds: 20    # Wait 20 seconds before the first probe
+          periodSeconds: 5         # Probe every 5 seconds
+          timeoutSeconds: 2         # Timeout if the probe takes longer than 2 seconds
+          failureThreshold: 3       # Mark the Pod as not ready after 3 consecutive failures
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  labels:
+    app: packersmovers
+spec:
+  type: LoadBalancer # classic load balancer will created
+  selector:
+    app: packersmovers
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
 ...
