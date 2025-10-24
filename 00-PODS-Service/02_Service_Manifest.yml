@@ -16,6 +16,8 @@ spec:
       port: 80
       targetPort: 8080
     # targetPort: 5000
+
+    login into the one of the worker node and take secondary Ip and curl <ip-address>
 ```
 #######################################################Load Balancer#######################################
 ---
@@ -36,6 +38,11 @@ spec:
       targetPort: 8080
     # targetPort: 5000
 ```
+
+
+CLassic loadbalancer DNS  if you want see the target group also SG 80 should be enable automatically
+
+Change the service name for LB one more Lb will created 
 ################################################################Node Port##############################
 ---
 apiVersion: v1
@@ -56,3 +63,9 @@ spec:
       # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
       nodePort: 30007
 ...
+
+
+To access the application:
+
+http://ip:nodeport
+http://3.144.188.160:30007
