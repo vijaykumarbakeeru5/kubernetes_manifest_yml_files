@@ -9,7 +9,7 @@ metadata:
 spec:
   strategy:
     type: RollingUpdate
-    # type: Rec
+    # type: Recreate
     rollingUpdate:
       maxUnavailable: 1          # Maximum number of Pods that can be unavailable during the update
       maxSurge: 1                # Maximum number of Pods that can be created above the desired replica count
