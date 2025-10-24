@@ -9,7 +9,6 @@ spec:
   replicas: 5
   minReadySeconds: 10
   selector:
-    matchLabels:
       namee: packes
       app: packersmovers
   template:
