@@ -10,6 +10,7 @@ spec:
   minReadySeconds: 10
   selector:
     matchLabels:
+      namee: packes
       app: packersmovers
   template:
     metadata:
