@@ -9,11 +9,11 @@ metadata:
 spec:
   strategy:
     type: RollingUpdate
-    # type: Recreate
+    # type: Recreate  # by default all the pods will be terminated so down time
     rollingUpdate:
       maxUnavailable: 1          # Maximum number of Pods that can be unavailable during the update
       maxSurge: 1                # Maximum number of Pods that can be created above the desired replica count
-  revisionHistoryLimit: 10
+  revisionHistoryLimit: 10        # matain the history of revision or track revision , 10 laste previson we store
   replicas: 3
   selector:
     matchLabels:
@@ -34,7 +34,9 @@ spec:
         readinessProbe:
           httpGet:
             path: /customer/ping          # Endpoint to check for readiness (adjust according to your app)
+          # path : /   # for froentend
             port: 8080
+          # port: 8080
           initialDelaySeconds: 20    # Wait 20 seconds before the first probe
           periodSeconds: 5         # Probe every 5 seconds
           timeoutSeconds: 2         # Timeout if the probe takes longer than 2 seconds
@@ -57,3 +59,6 @@ spec:
       port: 80
       targetPort: 8080
 ...
+
+
+# deploy the new images change the button and see the magic for recrete
