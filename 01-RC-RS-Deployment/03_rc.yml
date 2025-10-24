@@ -3,6 +3,7 @@ apiVersion: v1
 kind: ReplicationController
 metadata:
   name: customer
+# name: frontend
   labels:
     app: packersmovers
 spec:
@@ -21,6 +22,7 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+      # - containerPort: 5000
 ---
 apiVersion: v1
 kind: Service
