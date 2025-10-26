@@ -27,13 +27,18 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: javaweappsvc
+  name: backend-service
+  labels:
+    app: packersmovers
 spec:
-  type: NodePort
+  type:  NodePort
   selector:
-    app: javawebapp
+    app: packersmovers
   ports:
-    - port: 80
+    - name: http
+      protocol: TCP
+      port: 80
       targetPort: 8080
-      nodePort: 30785
+      # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
+      nodePort: 30007
 ...
