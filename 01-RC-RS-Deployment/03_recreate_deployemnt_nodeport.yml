@@ -51,7 +51,7 @@ notes:
 4. kubectl get deployment or deploy
 5. kubectl get pods -o wide
 6. kubectl get svc
-7. kubectl scale deployment frontend/customer replicas 5/3/2/1
+7. kubectl scale deployment frontend/customer --replicas 5/3/2/1
 8. kubectl delete pod <POD-NAME> ##  pod will create
 9. kubectl delete deployment <DEPLOYMENT_NAME> # now deployment delete
 
