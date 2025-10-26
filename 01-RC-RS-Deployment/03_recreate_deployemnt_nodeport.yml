@@ -42,7 +42,9 @@ spec:
       # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
       nodePort: 30007
 ...
-
+note:
+now change the images 1 to 2 and apply changes...
+all the pods will create and re-create one by one
 
 notes: 
 1. kubectl delete all --all
