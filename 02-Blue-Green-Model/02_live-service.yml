@@ -5,11 +5,12 @@ metadata:
   name: backend-service
   labels:
     app: packersmovers
+    version: v1
 spec:
   type: LoadBalancer # classic load balancer will created
   selector:
     app: packersmovers
-    version: v2
+    version: v1
   ports:
     - name: http
       protocol: TCP
