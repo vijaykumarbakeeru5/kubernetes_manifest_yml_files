@@ -19,6 +19,7 @@ spec:
     matchLabels:
       app: packersmovers
       verison: v1
+      color: blue
   template:
     metadata:
       labels:
