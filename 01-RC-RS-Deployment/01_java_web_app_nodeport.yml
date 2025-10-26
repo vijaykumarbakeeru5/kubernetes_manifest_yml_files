@@ -2,25 +2,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: javawebappdeployment
+  name: customer
+  labels:
+    app: packersmovers
 spec:
-  replicas: 2
   strategy:
     type: Recreate
+  replicas: 4
   selector:
     matchLabels:
-      app: javawebapp
-  template: 
+      app: packersmovers
+  template:
     metadata:
-      name: javawebapppod
       labels:
-        app: javawebapp
+        app: packersmovers
     spec:
       containers:
-      - name: javawebappcontainer
-        image: ashokit/javawebapp
+      - name: customer
+        image: 841162679093.dkr.ecr.us-east-1.amazonaws.com/customer:5
+        imagePullPolicy: Always
         ports:
-          - containerPort: 8080
+        - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
