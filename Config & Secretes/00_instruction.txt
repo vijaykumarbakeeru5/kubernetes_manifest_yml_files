@@ -1,1 +1,18 @@
+use case:
+15 images unay but ippudu db name change cheyali ante entire code in build chesi mali push cheyali, so recommanded to use envir varible, send that values outside of the application
+
+
+
+
 customer microserver change the branch to k8s-config-secrete
+we should pass envir variable instead of hard coded values
+
+config - non senstive data (db endpoint, db name)
+secrete - sensistive data( db username , db password)
+
+confifMap.yaml in replace db endpoint and db name
+service.yml in type Opaque : " echo -n 'admin1234' | base64 " or URL To encode : https://www.base64encode.org/
+
+
+kubect get cm
+kubectl get secrets
