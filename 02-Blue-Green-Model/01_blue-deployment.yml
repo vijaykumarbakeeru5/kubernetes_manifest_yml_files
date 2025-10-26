@@ -18,10 +18,12 @@ spec:
   selector:
     matchLabels:
       app: packersmovers
+      verison: v1
   template:
     metadata:
       labels:
         app: packersmovers
+        version: 1
     spec:
       containers:
       - name: customer
@@ -49,6 +51,7 @@ metadata:
   name: backend-service
   labels:
     app: packersmovers
+    verison: 1
 spec:
   type: LoadBalancer # classic load balancer will created
   selector:
