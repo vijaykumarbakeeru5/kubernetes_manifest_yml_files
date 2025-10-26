@@ -42,3 +42,14 @@ spec:
       # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
       nodePort: 30007
 ...
+
+
+notes: 
+1. kubectl apply -f recreate.yaml
+2. kubectl get deployment or deploy
+3. kubectl get pods
+4. kubectl get svc
+
+access:
+add the sg 30007
+http://<IP-addree-worker-nodes>:30007
