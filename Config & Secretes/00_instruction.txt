@@ -13,6 +13,8 @@ secrete - sensistive data( db username , db password)
 confifMap.yaml in replace db endpoint and db name
 service.yml in type Opaque : " echo -n 'admin1234' | base64 " or URL To encode : https://www.base64encode.org/
 
+comapare the deployment_config and config and secretes
+
 
 kubect get cm
 kubectl get secrets
