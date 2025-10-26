@@ -1,29 +1,47 @@
 ---
-    apiVersion: apps/v1
-    kind: Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer
+# name: frontend
+  labels:
+    app: packersmovers
+spec:
+  strategy:
+    type: RollingUpdate
+    # type: Recreate  # by default all the pods will be terminated so down time
+    rollingUpdate:
+      maxUnavailable: 1          # Maximum number of Pods that can be unavailable during the update
+      maxSurge: 1                # Maximum number of Pods that can be created above the desired replica count
+  revisionHistoryLimit: 10        # matain the history of revision or track revision , 10 laste previson we store
+  replicas: 3
+  selector:
+    matchLabels:
+      app: packersmovers
+      verison: v1
+      color: blue
+  template:
     metadata:
-      name: javawebappgreendeployment
+      labels:
+        app: packersmovers
+        version: v1
     spec:
-      replicas: 2
-      strategy:
-        type: RollingUpdate
-      selector:
-        matchLabels:
-          app: java-web-app
-          version: v2
-          color: green
-      template:
-        metadata:
-          name: javawebapppod
-          labels:
-            app: java-web-app
-            version: v2
-            color: green
-        spec:
-          containers:
-          - name: javawebappcontainer
-            image: ashokit/javawebapp:v2
-            imagePullPolicy: Always
-            ports:
-            - containerPort: 8080
+      containers:
+      - name: customer
+    # - name: frontend
+        image: 841162679093.dkr.ecr.us-east-1.amazonaws.com/customer:6
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+      # - containerPort: 5000
+        readinessProbe:
+          httpGet:
+            path: /customer/ping          # Endpoint to check for readiness (adjust according to your app)
+          # path : /   # for froentend and shash indicate https get method
+            port: 8080
+          # port: 8080
+          initialDelaySeconds: 20    # Wait 20 seconds before the first probe
+          periodSeconds: 5         # Probe every 5 seconds
+          timeoutSeconds: 2         # Timeout if the probe takes longer than 2 seconds
+          failureThreshold: 3       # Mark the Pod as not ready after 3 consecutive failures
 ...
