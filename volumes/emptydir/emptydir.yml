@@ -12,7 +12,7 @@ spec:
       mountPath: "Vijay/xchange"
   - name: c2-read
     image: centos:7
-    command: ["/bin/bash", "-c", "sleep 10000"]
+    command: ["/bin/bash", "-c", "sleep 10000"
     volumeMounts:
     - name: xchange
       mountPath: "Vijay/mydata"
@@ -20,6 +20,20 @@ spec:
   - name: xchange
     emptyDir: {}
 
-```
+step 1:
 kubectl apply -f emptydir.yml
-```
+kubectl get pods
+kubectl exec <pod-name> -c <c_name> -it --/bin/bash
+kubectl exec myvolemptydir -c c1-write -it -- bin/bash
+ls
+cd Vijay
+cd xchange
+vi abc.txt # this from c1-write
+exit
+step 2:
+kubectl exec myvolemptydir -c c2-read -it -- bin/bash
+ls
+cd Vijay
+cd mydata
+cat abc.txt
+
