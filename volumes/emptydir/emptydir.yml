@@ -22,6 +22,6 @@ spec:
     emptyDir: {}
 ```
 
-    ```
-    kubectl apply -f emptydir.yml
-    ```
+```
+kubectl apply -f emptydir.yml
+```
