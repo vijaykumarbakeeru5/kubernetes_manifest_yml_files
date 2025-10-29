@@ -1,4 +1,3 @@
----
 apiVersion: v1
 kind: Pod
 metadata:
@@ -20,7 +19,6 @@ spec:
   volumes:
   - name: xchange
     emptyDir: {}
-```
 
 ```
 kubectl apply -f emptydir.yml
