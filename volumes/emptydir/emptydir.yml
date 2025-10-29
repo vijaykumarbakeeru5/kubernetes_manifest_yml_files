@@ -20,6 +20,9 @@ spec:
   - name: xchange
     emptyDir: {}
 
+
+kubectl exec customer-pod -it -c customer -- /bin/sh
+
 step 1:
 kubectl apply -f emptydir.yml
 kubectl get pods
