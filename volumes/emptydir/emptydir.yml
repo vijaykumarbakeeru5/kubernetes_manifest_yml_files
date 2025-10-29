@@ -1,42 +1,43 @@
+---
 apiVersion: v1
 kind: Pod
 metadata:
-  name: myvolemptydir
+  name: customer-pod
+  # namespace: projecta
+  labels:
+    app: packersmovers
 spec:
   containers:
-  - name: c1-write
-    image: centos:7
-    command: ["/bin/bash", "-c", "sleep 15000"]
+  - name: customer
+    image: 630012419696.dkr.ecr.us-east-2.amazonaws.com/frontend:2
+    ports:
+    - containerPort: 5000
     volumeMounts:
     - name: xchange
-      mountPath: "Vijay/xchange"
-  - name: c2-read
-    image: centos:7
-    command: ["/bin/bash", "-c", "sleep 10000"
+      mountPath: "vijay/data/xchange"
+  - name: webapp
+    image: nginx
+    ports:
+    - containerPort: 80
     volumeMounts:
     - name: xchange
-      mountPath: "Vijay/mydata"
+      mountPath: "vijay/data/xchange"
+
   volumes:
   - name: xchange
-    emptyDir: {}
+```
 
-
+note:
+$ kubectl apply -f emptydir.yml
+$ kubectl get pods
+step 1:
+kubectl exec customer-pod -it -c customer -- /bin/sh
+cd ..
+cd vijay
+cd xhange
+vi abc.txt
+step 2:
+kubectl exec customer-pod -it -c webapp -- /bin/sh
 kubectl exec customer-pod -it -c customer -- /bin/sh
 
-step 1:
-kubectl apply -f emptydir.yml
-kubectl get pods
-kubectl exec <pod-name> -c <c_name> -it --/bin/bash
-kubectl exec myvolemptydir -c c1-write -it -- bin/bash
-ls
-cd Vijay
-cd xchange
-vi abc.txt # this from c1-write
-exit
-step 2:
-kubectl exec myvolemptydir -c c2-read -it -- bin/bash
-ls
-cd Vijay
-cd mydata
-cat abc.txt
 
