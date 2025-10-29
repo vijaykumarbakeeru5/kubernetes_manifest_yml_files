@@ -20,6 +20,7 @@ spec:
   - name: xchange
     emptyDir: {}
 
+
     ```
     kubectl apply -f emptydir.yml
     ```
