@@ -38,6 +38,7 @@ spec:
  selector: 
     matchLabels: 
      app: weshopify-app-db-pod
+ serviceName: mysql
  replicas: 1
 ---
 apiVersion: v1
@@ -54,3 +55,4 @@ spec:
     protocol: TCP
  selector: 
   app: weshopify-app-db-pod
+
