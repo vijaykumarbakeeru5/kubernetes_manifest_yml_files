@@ -1,1 +1,41 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: customer-pod
+  # namespace: projecta
+  labels:
+    app: packersmovers
+spec:
+  containers:
+  - name: customer
+    image: 630012419696.dkr.ecr.us-east-2.amazonaws.com/frontend:2
+    ports:
+    - containerPort: 5000
+    volumeMounts:
+    - name: xchange
+      mountPath: "vijay/data/xchange"
+  - name: webapp
+    image: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: xchange
+      mountPath: "vijay/data/xchange"
 
+  volumes:
+  - name: xchange
+```
+
+note:
+$ kubectl apply -f emptydir.yml
+$ kubectl get pods
+step 1:
+kubectl exec customer-pod -it -c customer -- /bin/sh
+cd ..
+cd vijay
+cd xhange
+vi abc.txt
+step 2:
+kubectl exec customer-pod -it -c webapp -- /bin/sh
+kubectl exec customer-pod -it -c customer -- /bin/sh
