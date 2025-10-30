@@ -9,7 +9,7 @@ spec:
     command: ["/bin/bash", "-c", "echo 'Hello Vijay!' > /data/hello.txt && sleep 3600"]
     volumeMounts:
     - name: host-volume
-      mountPath: /data
+      mountPath: /tmp/host-data
   volumes:
   - name: host-volume
     hostPath:
