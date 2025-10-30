@@ -16,29 +16,15 @@ spec:
       path: /tmp/vijaydata
       type: DirectoryOrCreate
 
+step 1: check which node pod are running. and login with ssh
+You’re logged in as: [ec2-user@ip-172-31-31-228 /]
+cat /data/host/hello.txt
 
-kubectl apply -f hostpath-demo.yaml
-kubectl get pods
-kubectl exec -it hostpath-demo -- /bin/bash
-ls /tmp
-ll /tmp
-cd /tmp/vijaydata
-ls
-kubectl exec hostpath-demo -- ls /tmp
-echo" i'm vijay" >myfile
-pwd
-ls
-kubectl exec hostpath-demo -- ls /tmp/host-data
-cat myfile
-kubectl exec hostpath-demo -- cat  /tmp/host-data/myfile
 
-now inside container:
-kubectl exec hostpath-demo -it -- .bash/bash
-cd /tmp/hostpath
-echo "this is my second file" > file2
-ls
-exit
-ls
+setp2:
+enter into the container:
+kubectl exec -it <NAME-OF-THE-MANIFEST> -- /bin/bash
+now inside the container check
 
 
 
