@@ -16,18 +16,21 @@ spec:
         type: DirectoryOrCreate
 
 
-need to read the data/host from hast to data/conatiner
+need to read the data/host  to data/conatiner vise verse
 
 
 step 1: check which node pod are running. and login with ssh
 You’re logged in as: [ec2-user@ip-172-31-31-228 /]
-cat /data/host/hello.txt
+cat /data/host/
 
 
 setp2:
 enter into the container:
 kubectl exec -it <NAME-OF-THE-MANIFEST> -- /bin/bash
 now inside the container check
+$ cd data
+cd conatiner
+write somthing and check in the host machine
 
 
 
