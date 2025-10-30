@@ -20,7 +20,26 @@ spec:
 kubectl apply -f hostpath-demo.yaml
 kubectl get pods
 kubectl exec -it hostpath-demo -- /bin/bash
-cat /data/hello.txt
-cat /tmp/vijaydata/hello.txt
+ls /tmp
+ll /tmp
+cd /tmp/vijaydata
+ls
+kubectl exec hostpath-demo -- ls /tmp
+echo" i'm vijay" >myfile
+pwd
+ls
+kubectl exec hostpath-demo -- ls /tmp/host-data
+cat myfile
+kubectl exec hostpath-demo -- cat  /tmp/host-data/myfile
+
+now inside container:
+kubectl exec hostpath-demo -it -- .bash/bash
+cd /tmp/hostpath
+echo "this is my second file" > file2
+ls
+exit
+ls
+
+
 
 
