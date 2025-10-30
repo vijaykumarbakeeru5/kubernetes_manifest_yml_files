@@ -1,20 +1,19 @@
-apiVersion: v1
 kind: Pod
 metadata:
   name: hostpath-demo
 spec:
   containers:
-  - name: centos-container
-    image: centos:7
-    command: ["/bin/bash", "-c", "echo 'Hello Vijay!' > /data/hello.txt && sleep 3600"]
-    volumeMounts:
-    - name: host-volume
-      mountPath: /tmp/host-data
+    - name: my-container
+      image: busybox
+      command: [ "sleep", "3600" ]
+      volumeMounts:
+        - name: host-data
+          mountPath: /data/container
   volumes:
-  - name: host-volume
-    hostPath:
-      path: /tmp/vijaydata
-      type: DirectoryOrCreate
+    - name: host-data
+      hostPath:
+        path: /data/host
+        type: DirectoryOrCreate
 
 step 1: check which node pod are running. and login with ssh
 You’re logged in as: [ec2-user@ip-172-31-31-228 /]
