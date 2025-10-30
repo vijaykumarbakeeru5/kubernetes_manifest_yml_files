@@ -33,5 +33,10 @@ cd conatiner
 write somthing and check in the host machine
 
 
+checking:
+if you delete the pod and re-crete a pod with the same host path which is /data/hots
+data will be there
+
+
 
 
