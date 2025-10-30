@@ -15,6 +15,10 @@ spec:
         path: /data/host
         type: DirectoryOrCreate
 
+
+need to read the data/host from hast to data/conatiner
+
+
 step 1: check which node pod are running. and login with ssh
 You’re logged in as: [ec2-user@ip-172-31-31-228 /]
 cat /data/host/hello.txt
