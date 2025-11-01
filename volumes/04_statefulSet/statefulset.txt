@@ -1,1 +1,30 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: frontend
+  labels:
+    app: packersmovers
+spec:
+  serviceName: "frontend"   # required for StatefulSet (can be any name)
+  replicas: 1
+  selector:
+    matchLabels:
+      app: packersmovers
+  template:
+    metadata:
+      labels:
+        app: packersmovers
+    spec:
+      containers:
+      - name: customer
+        image: 630012419696.dkr.ecr.us-east-2.amazonaws.com/frontend:2
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - name: customer-storage
+          mountPath: /app/data
+      volumes:
+      - name: customer-storage
+        persistentVolumeClaim:
+          claimName: customer-pv-claim
 
