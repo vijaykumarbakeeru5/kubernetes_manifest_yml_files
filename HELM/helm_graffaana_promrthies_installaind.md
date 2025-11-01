@@ -50,7 +50,7 @@ Node: You should see prometheus pods running
 ```bash
 kubectl get svc
 ```
-# By default prometheus and grafana services are available within the cluster as ClusterIP, to access them outside lets change it to NodePort / LoadBalancer.
+<h6># By default prometheus and grafana services are available within the cluster as ClusterIP, to access them outside lets change it to NodePort / LoadBalancer.</h6>
 
 # Edit Prometheus Service & change service type to LoadBalancer then save and close that file
 ```bash
