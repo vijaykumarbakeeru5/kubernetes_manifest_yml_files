@@ -35,8 +35,8 @@ Step 5: Test metrics API
 kubectl top nodes
 kubectl top pods --all-namespaces
 ```
-
 <h3>Then delete it using:</h3>
+
 ```bash
 kubectl delete -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
