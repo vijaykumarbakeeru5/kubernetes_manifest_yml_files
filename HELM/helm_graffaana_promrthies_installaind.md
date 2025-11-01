@@ -53,14 +53,18 @@ kubectl get svc
 <h6># By default prometheus and grafana services are available within the cluster as ClusterIP, to access them outside lets change it to NodePort / LoadBalancer.</h6>
 
 <h6># Edit Prometheus Service & change service type to LoadBalancer then save and close that file</h6>
+
 ```bash
 kubectl edit svc stable-kube-prometheus-sta-prometheus
 ```
+
 <h6># Now edit the grafana service & change service type to LoadBalancer then save and close that file</h6>
+
 ```bash
 kubectl edit svc stable-grafana
 ```
-# Verify the service if changed to LoadBalancer
+<h6># Verify the service if changed to LoadBalancer</h6>
+
 ```bash
 kubectl get svc
 ```
