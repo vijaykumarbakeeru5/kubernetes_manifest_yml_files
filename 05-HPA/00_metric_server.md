@@ -36,7 +36,7 @@ kubectl top nodes
 kubectl top pods --all-namespaces
 ```
 
-<h3Then delete it using:</h3>
+<h3>Then delete it using:</h3>
 ```bash
 kubectl delete -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
