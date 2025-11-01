@@ -4,9 +4,9 @@
 kubectl get nodes
 ```
 <h4>Step 2: Install Metrics Server using official YAML</h4>
+
 ```bash
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
-
 ```
 <h4>check : metrics-server Deployment (in kube-system namespace) Related RBAC roles and services.</h4>
 
