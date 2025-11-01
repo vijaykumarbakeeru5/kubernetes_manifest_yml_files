@@ -1,4 +1,4 @@
-get the metric server by the helm
+get the metric server by the helm , chagge false and true at last
 
 ```bash
 helm upgrade --install custom-metrics-server metrics-server/metrics-server \
