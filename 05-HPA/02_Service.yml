@@ -11,3 +11,8 @@ spec:
  selector:
    run: hpa-demo-deployment
 ...
+
+
+$ kubectl apply -f service.yaml
+
+$ kubectl get svc
