@@ -1,9 +1,9 @@
-before install 
+<h4>before install </h4>
 
 ```bash
 kubectl get nodes
 ```
-Step 2: Install Metrics Server using official YAML
+<h4>Step 2: Install Metrics Server using official YAML</h4>h4>
 ```bash
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 
