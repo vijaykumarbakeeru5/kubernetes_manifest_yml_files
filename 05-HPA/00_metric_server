@@ -1,0 +1,4 @@
+before install 
+```
+kubectl get nodes
+```
