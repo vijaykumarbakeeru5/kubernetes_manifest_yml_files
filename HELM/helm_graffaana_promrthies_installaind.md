@@ -11,3 +11,6 @@ chmod 700 get_helm.sh
 ```bash
 ./get_helm.sh # install sh script
 ```
+```bash
+helm
+```
