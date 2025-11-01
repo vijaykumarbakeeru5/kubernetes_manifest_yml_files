@@ -11,3 +11,5 @@ spec:
     volumeID: vol-02eb08ed063799a83
     fsType: ext4
   storageClassName: standard
+
+ $ kubectl get nodes -L topology.kubernetes.io/zone
