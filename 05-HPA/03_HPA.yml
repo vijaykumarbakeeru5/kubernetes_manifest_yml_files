@@ -42,3 +42,6 @@ $ kubectl get events
 $ kubectl top pods 
 
 $ kubectl get hpa
+
+
+reduce the load by cntrl +c  and see the kubectl get hpa
