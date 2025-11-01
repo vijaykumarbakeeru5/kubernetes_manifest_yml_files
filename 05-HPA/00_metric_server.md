@@ -8,17 +8,13 @@ Step 2: Install Metrics Server using official YAML
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 
 ```
-
-metrics-server Deployment (in kube-system namespace)
-
-Related RBAC roles and services.
-
-
+check : metrics-server Deployment (in kube-system namespace) Related RBAC roles and services.
 Step 3: (Optional but important) — Add args if using EC2 / custom cluster
 ```bash
 kubectl edit deployment metrics-server -n kube-system
 ```
-```basg
+Then, under spec.template.spec.containers.args, add these lines:
+```bash
 args:
   - --kubelet-insecure-tls
   - --kubelet-preferred-address-types=InternalIP
@@ -31,7 +27,6 @@ Step 4: Verify installation
 ```bash
 kubectl get pods -n kube-system | grep metrics
 ```
-
 Step 5: Test metrics API
 
 ```bash
