@@ -14,3 +14,8 @@ chmod 700 get_helm.sh
 ```bash
 helm
 ```
+check do we have metrics server on the cluster
+```bash
+kubectl top pods
+kubectl top nodes
+```
