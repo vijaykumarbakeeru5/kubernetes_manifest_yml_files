@@ -19,7 +19,7 @@ check do we have metrics server on the cluster
 kubectl top pods
 kubectl top nodes
 ```
-# check helm repos
+<h6> check helm repos</h6>
 ```bash
 helm repo ls
 ```
