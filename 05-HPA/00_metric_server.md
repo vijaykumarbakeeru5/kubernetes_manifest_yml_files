@@ -2,6 +2,7 @@
 
 ```bash
 kubectl get nodes
+kubectl top nodes
 ```
 <h4>Step 2: Install Metrics Server using official YAML</h4>
 
