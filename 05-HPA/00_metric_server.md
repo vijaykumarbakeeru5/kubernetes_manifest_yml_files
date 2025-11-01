@@ -8,7 +8,8 @@ Step 2: Install Metrics Server using official YAML
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 
 ```
-check : metrics-server Deployment (in kube-system namespace) Related RBAC roles and services.
+<h4>check : metrics-server Deployment (in kube-system namespace) Related RBAC roles and services.</h4>
+
 Step 3: (Optional but important) — Add args if using EC2 / custom cluster
 ```bash
 kubectl edit deployment metrics-server -n kube-system
