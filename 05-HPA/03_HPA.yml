@@ -31,7 +31,7 @@ $ kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /b
 
 
 
-$ kubectl get hpa -w
+$ kubectl get hpa -w # every 15 sec print the metric of the HPA
 
 $ kubectl describe deploy hpa-demo-deployment
 
